@@ -1,0 +1,26 @@
+Underwriting Guidelines – Internal Policy Document
+
+Credit Risk Assessment:
+Applicants with credit scores below 600 are considered high credit risk.
+Applicants with credit scores between 600 and 700 are considered moderate credit risk.
+Applicants with credit scores above 700 are considered low credit risk.
+
+Claims History Evaluation:
+Applicants with more than two claims in the last three policy years should be carefully reviewed.
+Frequent claims may indicate behavioral or environmental risk.
+High claim severity increases underwriting risk regardless of claim frequency.
+
+Occupation Risk Factors:
+Occupations involving physical labor, hazardous environments, or driving duties carry higher underwriting risk.
+Office-based and professional occupations generally carry lower underwriting risk.
+
+Medical Risk Considerations:
+Applicants with high medical risk indicators may require premium loading or coverage exclusions.
+Low medical risk applicants are generally acceptable for standard underwriting terms.
+
+Fraud & Compliance:
+Any confirmed fraud flag should result in immediate rejection.
+Applications with suspicious activity must undergo enhanced due diligence.
+
+Final Decision Guidance:
+Final underwriting decisions should consider a holistic view of applicant profile, claims behavior, and external risk indicators.
