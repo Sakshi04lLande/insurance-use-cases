@@ -143,24 +143,5 @@ Each project also has its **own README** with more details.
 * `.env` and `venv` are excluded using `.gitignore`
 * All paths are relative — run scripts from their project folders
 
----
-
-## Purpose of This Repository
-
-* Practice real-world **insurance GenAI use cases**
-* Learn prompt engineering and RAG workflows
-* Build interview-ready AI projects
-* Demonstrate end-to-end AI application design
-
----
-
-## License
-
-This repository is created for **learning and demonstration purposes**.
-
-```
 
 
-
-Just tell me 👍
-```
