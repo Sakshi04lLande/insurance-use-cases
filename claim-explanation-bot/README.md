@@ -1,9 +1,9 @@
-A GenAI-based application that explains insurance claim settlement decisions to customers in simple and easy language.
+# A GenAI-based application that explains insurance claim settlement decisions to customers in simple and easy language.
 
 This bot helps customers understand why their claim was approved, reduced, or denied, without using complex insurance or legal terms.
 
 
-The explanation is:
+# The explanation is:
 
 Simple
 
@@ -13,7 +13,7 @@ Easy to understand
 
 Non-technical
 
-⚙️ How It Works
+## How It Works
 
 User uploads a claim report PDF
 
@@ -25,7 +25,7 @@ A carefully designed prompt is sent to the AI model
 
 The AI generates a clear explanation for the customer
 
- Key Features
+## Key Features
 
 Explains claim decisions in simple language
 
@@ -37,7 +37,7 @@ Clean and professional UI
 
 Easy to extend for future use cases
 
- Technologies Used
+## Technologies Used
 
 Python
 
@@ -49,7 +49,7 @@ LangChain – for prompt handling
 
 PDFPlumber – for PDF text extraction
 
- Project Structure
+## Project Structure
 claim-explanation-bot/
 │
 ├── app.py          # Streamlit UI
@@ -57,7 +57,7 @@ claim-explanation-bot/
 ├── requirements.txt
 ├── .env
 
- Environment Variables
+## Environment Variables
 
 Create a .env file and add the following:
 
@@ -82,7 +82,7 @@ pip install -r requirements.txt
 # Run the app
 streamlit run app.py
 
- Demo Input
+## Demo Input
 
 Upload any insurance claim report PDF
 
@@ -94,7 +94,7 @@ Reduced
 
 Denied
 
- Output
+ ## Output
 
 The system generates a customer-friendly explanation clearly stating:
 
