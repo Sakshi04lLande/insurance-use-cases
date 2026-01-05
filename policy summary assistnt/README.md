@@ -34,7 +34,7 @@ A structured policy summary containing:
 -pdfplumber (PDF text extraction)
 -dotenv (environment configuration)
 
-## ⚙️ How It Works
+##  How It Works
 1. Extracts text from the uploaded PDF  
 2. Splits content into safe-sized chunks  
 3. **Stage 1:** Extracts factual notes (no interpretation)  
@@ -43,7 +43,7 @@ A structured policy summary containing:
 
 ---
 
-## ▶️ How to Run
+## How to Run
 ```bash
 # Create virtual environment
 python -m venv venv
