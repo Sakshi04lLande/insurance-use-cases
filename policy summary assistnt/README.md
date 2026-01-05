@@ -33,3 +33,26 @@ A structured policy summary containing:
 -LangChain (prompt control & chunking)
 -pdfplumber (PDF text extraction)
 -dotenv (environment configuration)
+
+## ⚙️ How It Works
+1. Extracts text from the uploaded PDF  
+2. Splits content into safe-sized chunks  
+3. **Stage 1:** Extracts factual notes (no interpretation)  
+4. **Stage 2:** Generates a controlled, plain-language summary  
+5. Displays the final summary in a clean UI  
+
+---
+
+## ▶️ How to Run
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Add Azure OpenAI credentials in .env file
+
+# Run the app
+streamlit run app.py
