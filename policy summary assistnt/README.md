@@ -1,18 +1,35 @@
-# Policy Summary Assistant
+#  Policy Summary Assistant (GenAI)
 
-This project is a GenAI-based tool that reads long insurance policy PDFs and generates a clear, plain-language summary.
+##  Project Overview
+Policy Summary Assistant is a GenAI-based tool that reads long insurance policy PDFs and generates a **clear, plain-language summary**.  
+It helps users quickly understand **coverage, exclusions, limits, and conditions** without reading the full policy document.
 
-It extracts only factual information from the document and creates a structured summary covering:
-Scope, Coverage, Exclusions, Limits & Conditions, and Missing Information.
+The system is designed to be **neutral, safe, and factual**, using a two-step AI process to avoid assumptions or misleading summaries.
 
-The summary is limited to 200–300 words, avoids assumptions, and uses cautious language.
-Built using Python, Streamlit, LangChain, and Azure OpenAI.
+---
 
--Designed for insurance policy documents (health, group, endorsements, etc.)
+##  Input
+- Insurance policy document in **PDF format**
+- Supported examples:
+  - Health Insurance Policies  
+  - Group Insurance Policies  
+  - Contractors All Risks Policies  
 
+---
 
-## How to run the project
+##  Output
+A structured policy summary containing:
+- **Scope** – what type of document it is  
+- **Coverage** – high-level benefits (plain language)  
+- **Exclusions** – major non-covered areas  
+- **Limits & Conditions** – important claim-related rules  
+- **Missing Information** – details not available in the document  
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
+---
+## Technology Used
+-Python
+-Streamlit (UI)
+-Azure OpenAI (LLM)
+-LangChain (prompt control & chunking)
+-pdfplumber (PDF text extraction)
+-dotenv (environment configuration)
