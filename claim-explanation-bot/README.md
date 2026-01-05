@@ -1,108 +1,75 @@
-# A GenAI-based application that explains insurance claim settlement decisions to customers in simple and easy language.
+#  GenAI Claim Explanation Bot
 
-This bot helps customers understand why their claim was approved, reduced, or denied, without using complex insurance or legal terms.
+## Project Overview
 
+GenAI Claim Explanation Bot is a GenAI-based tool that explains **insurance claim settlement outcomes** to customers in clear, simple, and customer-friendly language.
 
-# The explanation is:
+It helps users understand **why their claim was approved, reduced, or denied** without reading complex claim reports or policy terms.
 
-Simple
+The system is designed to be **neutral, polite, and factual**, focusing on tone adaptation and summarization so that explanations are easy to understand and trustworthy.
 
-Polite
+---
 
-Easy to understand
+##  Input
 
-Non-technical
+- Insurance claim report in **PDF format**
+- Claim decision selected by the user:
+  - Approved
+  - Reduced
+  - Denied
 
-## How It Works
+Supported examples:
+- Property damage claims  
+- Fire and theft claims  
+- Vehicle accident claims  
+- Health insurance claims  
 
-User uploads a claim report PDF
+---
 
-User selects the claim decision
+##  Output
 
-The system extracts text from the PDF
+A **customer-friendly claim explanation** containing:
 
-A carefully designed prompt is sent to the AI model
+- **Decision** – whether the claim was approved, reduced, or denied  
+- **Covered Areas** – what parts of the claim are accepted  
+- **Non-Covered Areas** – what is not included (if applicable)  
+- **Reasoning** – simple explanation for the decision  
+- **Tone** – polite, calm, and easy to understand  
 
-The AI generates a clear explanation for the customer
+---
 
-## Key Features
+##  Technology Used
 
-Explains claim decisions in simple language
+- Python  
+- Streamlit (UI)  
+- Azure OpenAI (LLM)  
+- LangChain (prompt control & response handling)  
+- pdfplumber (PDF text extraction)  
+- dotenv (environment configuration)  
 
-Works with real claim report PDFs
+---
 
-Polite and customer-friendly tone
+##  How It Works
 
-Clean and professional UI
+- Extracts text from the uploaded claim report PDF  
+- Uses prompt engineering to control tone and clarity  
+- Sends the claim content and decision to the AI model  
+- Generates a clear and polite explanation in plain language  
+- Displays the final explanation in a clean and professional UI  
 
-Easy to extend for future use cases
+---
 
-## Technologies Used
+##  How to Run
 
-Python
-
-Streamlit – for UI
-
-Azure OpenAI – for generating explanations
-
-LangChain – for prompt handling
-
-PDFPlumber – for PDF text extraction
-
-## Project Structure
-claim-explanation-bot/
-│
-├── app.py          # Streamlit UI
-├── claim_bot.py    # GenAI logic
-├── requirements.txt
-├── .env
-
-## Environment Variables
-
-Create a .env file and add the following:
-
-AZURE_OPENAI_API_KEY=your_api_key_here
-AZURE_OPENAI_ENDPOINT=https://your-resource-name.openai.azure.com/
-AZURE_OPENAI_DEPLOYMENT_NAME=your_deployment_name
-AZURE_OPENAI_API_VERSION=2024-02-01
-
-
-Do not upload .env file to GitHub
-
- How to Run the Project
+```bash
 # Create virtual environment
 python -m venv venv
-
-# Activate virtual environment (Windows)
-venv\Scripts\activate
+source venv/bin/activate   # Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
+# Add Azure OpenAI credentials in .env file
+
 # Run the app
 streamlit run app.py
-
-## Demo Input
-
-Upload any insurance claim report PDF
-
-Select decision:
-
-Approved
-
-Reduced
-
-Denied
-
- ## Output
-
-The system generates a customer-friendly explanation clearly stating:
-
-What is covered
-
-What is not covered (if any)
-
-Why the final decision was made
-
-
-
