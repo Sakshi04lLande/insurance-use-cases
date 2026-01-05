@@ -1,0 +1,67 @@
+==============================
+CLAIM INPUT SAMPLES
+==============================
+
+--------------------------------
+Claim 1: Water Damage
+--------------------------------
+Water pipe burst in office washroom.
+Furniture and carpet damaged.
+Office closed for cleaning for one day.
+
+
+--------------------------------
+Claim 2: Theft / Burglary
+--------------------------------
+Someone broke into the warehouse at night.
+Several cartons of mobile accessories stolen.
+No physical damage to building.
+
+
+--------------------------------
+Claim 3: Fire / Electrical (Ambiguous)
+--------------------------------
+Fire alarm triggered suddenly around midnight.
+Smoke smell noticed in server room.
+Some wiring damaged but no visible flames.
+Cause unclear whether fire or electrical fault.
+
+
+--------------------------------
+Claim 4: Vehicle Accident
+--------------------------------
+Was driving home last night during heavy rain.
+Car skidded and hit the divider.
+Front bumper damaged and airbags deployed.
+Driver safe.
+
+
+--------------------------------
+Claim 5: Natural Calamity
+--------------------------------
+Due to strong winds and heavy rain,
+roof sheets flew away and stock kept inside got wet.
+
+
+--------------------------------
+Claim 6: Machinery Failure
+--------------------------------
+Main production machine stopped suddenly.
+Motor overheated and control panel damaged.
+Production halted for two days.
+
+
+--------------------------------
+Claim 7: Customer Injury
+--------------------------------
+Customer slipped near store entrance due to wet floor.
+Minor injury to leg.
+First aid given on site.
+
+
+--------------------------------
+Claim 8: Very Short / Poor Input
+--------------------------------
+water came inside
+items wet
+shop closed
