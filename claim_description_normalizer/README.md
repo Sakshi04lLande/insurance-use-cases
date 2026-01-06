@@ -1,50 +1,87 @@
-# AI Claim Description Normalizer
+# GenAI Claim Description Normalizer
 
 ## Project Overview
 
-This project is an AI-based system that converts unstructured insurance claim text
-into structured, machine-readable data.
+GenAI Claim Description Normalizer is a GenAI-based system that converts **raw insurance claim text**
+into **structured and machine-readable data**.
 
-Insurance companies receive claim information in free-text form such as:
-- customer emails
-- WhatsApp messages
-- call center notes
-- surveyor or adjuster reports
+Insurance companies receive claim information in free-text form such as emails, WhatsApp messages,
+call center notes, and surveyor reports. These texts are often messy and hard to process automatically.
 
-These texts are difficult to process automatically.  
-This project solves that problem.
+This project normalizes such unstructured claim descriptions into **clean structured data**
+without guessing or making assumptions.
 
 ---
 
-## What This Project Does
+## Input
 
-The system takes raw claim text as input and extracts:
+- Raw insurance claim description in **text format**
+- Input can come from:
+  - Customer emails
+  - WhatsApp messages
+  - Call center notes
+  - Field surveyor / adjuster notes
 
-- Loss Type  
-- Severity (only if clearly mentioned, otherwise null)  
-- Affected Assets  
-- Incident Summary  
+Supported claim examples:
+- Water damage claims  
+- Fire and theft claims  
+- Vehicle accident claims  
+- Machinery and property damage claims  
 
-The output is clean and structured data that can be used by insurance systems.
+---
 
-## Create virtual environment
+## Output
 
-It is recommended to use a virtual environment.
+The system generates **structured claim data** containing:
+
+- **Loss Type** – type of incident (only if clearly mentioned)  
+- **Severity** – impact level (Low / Medium / High) or `null` if unclear  
+- **Affected Assets** – list of damaged or impacted items  
+- **Incident Summary** – short factual summary of the claim  
+
+The output is safe, clean, and ready to be used by insurance systems.
+
+---
+
+## Technology Used
+
+- Python  
+- Streamlit (User Interface)  
+- Azure OpenAI (Large Language Model)  
+- LangChain (prompt control and structured output)  
+- Pydantic (schema validation)  
+- dotenv (environment configuration)  
+
+---
+
+## How It Works
+
+- User enters raw claim text in the application  
+- AI reads and understands the claim description  
+- Only **explicitly mentioned information** is extracted  
+- No assumptions or guessing is done  
+- Missing information is returned as `null`  
+- Final structured output is displayed in the UI  
+
+---
+
+## How to Run the Project
+
 ```bash
+# Create virtual environment
 python -m venv venv
+
+# Activate virtual environment
+# Windows
 venv\Scripts\activate
-Install dependencies
+
+# macOS / Linux
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 
-## Environment variables
+# Add Azure OpenAI credentials in .env file
 
-Create a .env file in the project root and add your Azure OpenAI details:
-
-AZURE_OPENAI_ENDPOINT=your_endpoint
-AZURE_OPENAI_DEPLOYMENT=your_deployment_name
-AZURE_OPENAI_API_KEY=your_api_key
-AZURE_OPENAI_VERSION=your_api_version
-
-## Run the application
+# Run the Streamlit app
 streamlit run app.py
-
