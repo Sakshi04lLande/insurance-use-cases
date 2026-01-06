@@ -1,28 +1,97 @@
 # GenAI Underwriting Assistant
 
-This project is a GenAI-based underwriting assistant that helps assess insurance risk for applicants.  
-The system reads underwriting guidelines from documents and uses an LLM to generate risk decisions.
-Built using Python, Streamlit, LangChain, and Azure OpenAI.
+## Project Overview
 
-## Create virtual environment
+ Underwriting Assistant is a GenAI-based system that helps insurance underwriters
+assess applicant risk **before approving or pricing a policy**.
 
-It is recommended to use a virtual environment.
+Traditional underwriting systems rely on fixed, hardcoded rules.
+This project uses a **document-driven approach**, where underwriting guidelines are read
+from documents and interpreted using a Large Language Model (LLM).
+
+The system analyzes applicant data, claims history, and external risk indicators to
+generate a **clear, explainable underwriting decision** without making assumptions.
+
+---
+
+## Input
+
+- Applicant details:
+  - Age
+  - Occupation
+  - Annual income
+  - Credit score
+  - Location risk zone
+- Claims history (if any)
+- External risk indicators:
+  - Fraud flag
+  - Medical risk level
+- Underwriting guidelines document (text-based)
+
+Supported scenarios:
+- Health insurance underwriting  
+- Life insurance risk assessment  
+- General insurance applicant screening  
+
+---
+
+## Output
+
+The system generates a **clear and structured underwriting decision** containing:
+
+- **Risk Score** – numeric score between 0 and 100  
+- **Risk Category** – Low / Medium / High  
+- **Underwriting Recommendation** – approve, review, or reject  
+- **Justification** – simple explanation based on retrieved guidelines  
+
+All outputs are strictly grounded in the underwriting document and applicant data.
+
+---
+
+## Technology Used
+
+- Python  
+- Azure OpenAI (Large Language Model)  
+- LangChain (Retrieval-Augmented Generation)  
+- ChromaDB (Vector Database)  
+- HuggingFace Embeddings  
+- Streamlit  
+- dotenv  
+
+---
+
+## How It Works
+
+- Underwriting guidelines are stored in an external document  
+- The document is converted into embeddings and stored in ChromaDB  
+- Applicant details are used to retrieve relevant guideline sections  
+- Azure OpenAI analyzes:
+  - Applicant profile
+  - Claims history
+  - External risk indicators
+  - Retrieved underwriting guidelines  
+- The system generates a structured, explainable underwriting decision  
+- No hardcoded rules or external assumptions are used  
+
+---
+
+## How to Run the Project
+
 ```bash
+# Create virtual environment
 python -m venv venv
+
+# Activate virtual environment
+# Windows
 venv\Scripts\activate
-Install dependencies
+
+# macOS / Linux
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 
-## Environment variables
+# Add Azure OpenAI credentials in .env file
 
-Create a .env file in the project root and add your Azure OpenAI details:
-
-AZURE_OPENAI_ENDPOINT=your_endpoint
-AZURE_OPENAI_DEPLOYMENT=your_deployment_name
-AZURE_OPENAI_API_KEY=your_api_key
-AZURE_OPENAI_VERSION=your_api_version
-
-## Run the application
+# Run the application
 streamlit run app.py
-
-This will open the Streamlit UI in your browser where you can enter applicant details and get an underwriting decision.
