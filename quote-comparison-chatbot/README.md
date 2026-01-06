@@ -1,25 +1,89 @@
-# Insurance Quote Comparison Assistant
+# GenAI Insurance Quote Comparison Assistant
 
-This project is a GenAI-based assistant that reads health insurance quote PDFs and helps users compare policies before buying insurance.
+## Project Overview
 
-It analyzes coverage details such as hospitalisation, surgery, limits, co-payments, and waiting periods, and then recommends the most suitable plan based on the user’s need (for example, future medical treatment or family coverage).
+GenAI Insurance Quote Comparison Assistant is a GenAI-based system that helps users compare
+insurance quotes **before purchasing a policy**.
 
-The assistant uses a document-grounded RAG approach, meaning all answers are generated strictly from the PDF content without assumptions or hallucinations.  
-Responses are short, clear, and decision-focused.
+Insurance quotes often contain complex coverage details, limits, co-payments, and conditions
+that are difficult for customers to understand. This project reads insurance quote PDFs and
+explains differences between plans in **clear and simple language**.
 
-Built using Python, LangChain, ChromaDB, and Azure OpenAI.
-
-- Works on real insurance quote PDFs  
-- Compares multiple plans from the same document  
-- Explains coverage differences in simple language  
-- Designed for learning, demos, and interview projects  
+The system focuses on **future risk coverage**, helping users understand which policy offers
+better protection based on the available document information, without making assumptions.
 
 ---
 
-## How to run the project
+## Input
+
+- Insurance quote document in **PDF format**
+- The document may contain:
+  - Multiple insurance plans
+  - Coverage details
+  - Co-payments / deductibles
+  - Limits and conditions
+  - Waiting periods
+
+Supported examples:
+- Health insurance quote PDFs  
+- Multi-plan comparison documents  
+- Hospitalisation and treatment coverage quotes  
+
+---
+
+## Output
+
+The system generates a **short and decision-focused response** containing:
+
+- **Coverage Comparison** – key differences between plans  
+- **Cost Insight** – co-payments / deductibles and limits  
+- **Recommendation** – most suitable plan based on document facts  
+- **Important Notes** – waiting periods or limitations if mentioned  
+
+All outputs are strictly grounded in the document and kept concise.
+
+---
+
+## Technology Used
+
+- Python  
+- Azure OpenAI (Large Language Model)  
+- LangChain (Retrieval-Augmented Generation)  
+- ChromaDB (Vector Database)  
+- HuggingFace Embeddings  
+- pdfplumber  
+- dotenv  
+
+---
+
+## How It Works
+
+- User uploads an insurance quote PDF  
+- The document is split into chunks and embedded  
+- Relevant sections are retrieved using similarity search  
+- AI compares plans using only retrieved content  
+- No assumptions or external knowledge is used  
+- Final recommendation is returned in clear, short text  
+
+---
+
+## How to Run the Project
 
 ```bash
+# Create virtual environment
 python -m venv venv
+
+# Activate virtual environment
+# Windows
 venv\Scripts\activate
+
+# macOS / Linux
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
+
+# Add Azure OpenAI credentials in .env file
+
+# Run the application
 python app.py
