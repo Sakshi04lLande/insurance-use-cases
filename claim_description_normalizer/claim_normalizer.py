@@ -12,7 +12,7 @@ from langchain_core.prompts import PromptTemplate
 load_dotenv()
 
 # ======================================================
-# AZURE OPENAI LLM (CORRECT CONFIG)
+# AZURE OPENAI LLM 
 # ======================================================
 llm = AzureChatOpenAI(
     azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
@@ -23,7 +23,7 @@ llm = AzureChatOpenAI(
 )
 
 # ======================================================
-# OUTPUT SCHEMA (STRICT)
+# OUTPUT SCHEMA 
 # ======================================================
 class ClaimOutput(BaseModel):
     loss_type: str | None
@@ -32,7 +32,7 @@ class ClaimOutput(BaseModel):
     incident_summary: str | None
 
 # ======================================================
-# PROMPT TEMPLATE (NO JSON INSTRUCTIONS NEEDED)
+# PROMPT TEMPLATE 
 # ======================================================
 PROMPT = PromptTemplate(
     input_variables=["claim_text"],
@@ -52,7 +52,7 @@ Claim Text:
 )
 
 # ======================================================
-# MAIN FUNCTION (✔ GUARANTEED VALID JSON)
+# MAIN FUNCTION 
 # ======================================================
 def normalize_claim_description(claim_text: str) -> dict:
     structured_llm = llm.with_structured_output(ClaimOutput)
